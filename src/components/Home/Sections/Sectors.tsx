@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ReusableButton } from "@/components/Common/Button";
 
 interface SectorData {
   id: number;
@@ -77,12 +76,11 @@ const sectorsData: SectorData[] = [
 
 export default function DiverseSectorsSlider() {
   return (
-    <div className="bg-black text-white py-12 px-6 sm:px-10 md:px-24">
-      <div className="max-w-7xl">
+    <div className="bg-black text-white py-12 px-3 md:px-0 sm:pl-0 md:pl-24">
+      <div>
         <h2 className="text-[40px] md:text-[68px] font-light mb-10 text-left">
           Our Diverse Sectors
         </h2>
-
         <div className="relative">
           <Swiper
             modules={[Navigation]}
@@ -99,7 +97,7 @@ export default function DiverseSectorsSlider() {
                   <div className="border-t-1 border-r-1 border-[#C2C2C2] group-hover:border-t-[#7AC142] group-hover:border-t-6 transition-all duration-300 p-2 h-full flex flex-col items-center">
                     <div className="px-3 py-6">
                       {/* Icon */}
-                      <div className="mb-[16px] flex justify-between">
+                      <div className="mb-[16px] flex justify-between items-center">
                         <div className="w-12 h-12 flex items-center justify-center">
                           <Image
                             src={sector.logo}
@@ -129,7 +127,6 @@ export default function DiverseSectorsSlider() {
                         {sector.description}
                       </p>
                     </div>
-
                     {/* Image */}
                     <div className="relative w-[487px] h-[400px] hover:h-[320px] transition-all duration-300 overflow-hidden">
                       <Image
@@ -144,14 +141,12 @@ export default function DiverseSectorsSlider() {
               </SwiperSlide>
             ))}
           </Swiper>
-
           {/* Navigation Buttons */}
-          <div className="absolute bottom-[50px] -translate-y-1/2 right-[-32px] md:right-[232px] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
+          <div className="absolute bottom-[50px] -translate-y-1/2 right-0 md:right-[232px] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
             {/* Left Button */}
             <div className="swiper-button-prev-custom w-1/2 h-full bg-black hover:bg-white/30 flex items-center justify-center transition-colors duration-200 cursor-pointer">
               <ChevronLeft className="text-[#7AC142]" />
             </div>
-
             {/* Right Button */}
             <div className="swiper-button-next-custom w-1/2 h-full bg-black hover:bg-white/30 flex items-center justify-center transition-colors duration-200 cursor-pointer">
               <ChevronRight className="text-[#7AC142]" />
