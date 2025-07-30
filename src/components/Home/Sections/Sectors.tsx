@@ -78,7 +78,7 @@ export default function DiverseSectorsSlider() {
   return (
     <div className="bg-black text-white py-12 px-3 md:px-0 sm:pl-0 md:pl-24">
       <div>
-        <h2 className="text-[40px] md:text-[68px] font-light mb-10 text-left">
+        <h2 className="text-[40px] md:text-[68px] font-normal mb-10 text-left">
           Our Diverse Sectors
         </h2>
         <div className="relative">

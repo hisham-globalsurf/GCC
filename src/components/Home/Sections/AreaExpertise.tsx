@@ -88,7 +88,7 @@ export default function AreaOfExpertise() {
 
   return (
     <section className="bg-white w-full pt-12 px-3 sm:px-10 md:px-0 sm:pl-0 md:pl-24">
-      <h2 className="text-black text-[40px] md:text-[68px] font-light mb-[43px]">
+      <h2 className="text-black text-[40px] md:text-[68px] font-normal mb-[43px]">
         Area of Expertise
       </h2>
 
