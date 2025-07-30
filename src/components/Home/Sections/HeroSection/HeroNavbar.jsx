@@ -20,7 +20,7 @@ export default function HeroNavbar() {
       <div className="flex items-center justify-between h-full border-b border-[#DBDBDB] md:pl-24">
         {/* Logo */}
         <Image
-          src="/home/hero/navlogo.png"
+          src="/home/hero/navlogo.svg"
           alt="Logo"
           width={160}
           height={50}
