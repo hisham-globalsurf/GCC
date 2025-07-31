@@ -22,7 +22,7 @@ export const ReusableButton: React.FC<ReusableButtonProps> = ({
     <button
       {...rest}
       className={clsx(
-        "flex items-center justify-center gap-5 px-3 py-2 text-sm rounded-full transition duration-200 uppercase",
+        "flex items-center justify-center cursor-pointer gap-5 px-3 py-2 text-sm rounded-full transition duration-200 uppercase",
         className
       )}
     >
