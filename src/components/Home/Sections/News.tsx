@@ -58,9 +58,9 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="w-full bg-[#F5F3F0] py-8 px-6 sm:px-10 md:px-24">
+    <section className="container bg-[#F5F3F0] lg:py-10 py-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-[40px] md:text-[68px] font-normal text-black">
+        <h2 className="text-[30px] md:text-[68px] font-normal text-black">
           News
         </h2>
         <ReusableButton
@@ -74,7 +74,7 @@ export default function NewsSection() {
             />
           }
           iconPosition="right"
-          className="hover:bg-gray-200 px-6 rounded-[35px] h-[42px] text-[16px] text-[#515151] border border-[#515151] font-light"
+          className="hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
         />
       </div>
 
@@ -91,12 +91,13 @@ export default function NewsSection() {
           bulletActiveClass: "custom-bullet-active",
         }}
         autoplay={{ delay: 5000 }}
-        loop
+        loop={true}
+        speed={500}
         className="relative"
       >
         {newsData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex flex-col md:flex-row gap-10">
+            <div className="flex flex-col md:flex-row gap-[69px]">
               {/* Left: Image */}
               <div className="w-full h-auto md:w-[745px] md:h-[431px]">
                 <Image
@@ -109,7 +110,7 @@ export default function NewsSection() {
               </div>
 
               {/* Right: Content */}
-              <div className="w-full md:basis-[60%] flex flex-col justify-evenly md:py-10">
+              <div className="w-full md:basis-[50%] flex flex-col justify-evenly md:py-10">
                 <div className="flex justify-between items-center mb-4">
                   <span className="bg-[#7AC142] text-[#515151] text-[16px] font-light uppercase px-[14px] py-[3px]">
                     {item.category.toUpperCase()}
@@ -139,7 +140,7 @@ export default function NewsSection() {
                       />
                     }
                     iconPosition="right"
-                    className="hover:bg-gray-200 px-6 rounded-[35px] h-[42px] text-[16px] text-[#515151] border border-[#515151] font-light"
+                    className="hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
                   />
                 </div>
               </div>
@@ -148,7 +149,7 @@ export default function NewsSection() {
         ))}
 
         {/* Pagination */}
-        <div className="custom-pagination mt-10 mb-6 flex justify-center gap-[10px]"></div>
+        <div className="custom-pagination mt-[42px] lg:mb-10 mb-6 flex justify-center gap-[10px]"></div>
       </Swiper>
 
       <style jsx global>{`

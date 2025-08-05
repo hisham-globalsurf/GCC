@@ -114,11 +114,11 @@ export default function HeroSection() {
       </div>
 
       {/* STATS */}
-      <div className="absolute bottom-0 left-0 w-full px-6 md:px-24 lg:pr-52">
+      <div className="absolute bottom-0 left-0 w-full containe lg:pr-52 lg:px-20 px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 text-white border-t-1">
           {/* Stat 1 */}
-          <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[15px] ">
-            <span className="text-[30px] lg:text-[68px] font-normal">
+          <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
+            <span className="text-[30px] lg:text-[68px] font-normal -mb-1">
               <CountUp end={35} suffix="+" duration={2} />
             </span>
             <span className="text-[12px] lg:text-[19px] font-light">
@@ -127,8 +127,8 @@ export default function HeroSection() {
           </div>
 
           {/* Stat 2 - highlighted */}
-          <div className="flex flex-col bg-[#FA3D2F] text-white items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[15px]">
-            <span className="text-[30px] lg:text-[68px] font-normal">
+          <div className="flex flex-col bg-[#FA3D2F] text-white items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
+            <span className="text-[30px] lg:text-[68px] font-normal -mb-1">
               <CountUp end={180} suffix="M" duration={2} />
             </span>
             <span className="text-[12px] lg:text-[19px] font-light">
@@ -137,8 +137,8 @@ export default function HeroSection() {
           </div>
 
           {/* Stat 3 */}
-          <div className="flex flex-col border-x border-y border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[15px]">
-            <span className="text-[30px] lg:text-[68px] font-normal">
+          <div className="flex flex-col border-x border-y border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
+            <span className="text-[30px] lg:text-[68px] font-normal -mb-1">
               <CountUp end={750} suffix="+" duration={2} />
             </span>
             <span className="text-[12px] lg:text-[19px] font-light">
@@ -147,8 +147,8 @@ export default function HeroSection() {
           </div>
 
           {/* Stat 4 */}
-          <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[15px]">
-            <span className="text-[30px] lg:text-[68px] font-normal">
+          <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
+            <span className="text-[30px] lg:text-[68px] font-normal -mb-1">
               <CountUp end={5000} suffix="+" duration={2} />
             </span>
             <span className="text-[12px] lg:text-[19px] font-light">

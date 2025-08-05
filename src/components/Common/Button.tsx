@@ -6,7 +6,7 @@ import { MdFileDownload } from "react-icons/md";
 
 interface ReusableButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  icon?: React.ReactNode; // Can be <MdIcon /> or <Image />
+  icon?: React.ReactNode; 
   iconPosition?: "left" | "right";
   className?: string;
 }
@@ -22,7 +22,7 @@ export const ReusableButton: React.FC<ReusableButtonProps> = ({
     <button
       {...rest}
       className={clsx(
-        "flex items-center justify-center cursor-pointer gap-5 px-3 py-2 text-sm rounded-full transition duration-200 uppercase",
+        "flex items-center justify-center cursor-pointer gap-5 px-3 py-2 text-sm rounded-full transition duration-300 uppercase",
         className
       )}
     >
