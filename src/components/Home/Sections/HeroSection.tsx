@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { ReusableButton } from "@/components/Common/Button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import HeroNavbar from "../../Common/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 
@@ -160,11 +159,11 @@ export default function HeroSection() {
       </div>
 
       {/* SCROLLING TIMER INDICATOR */}
-      <div className="absolute top-[220px] md:top-1/2 md:right-4 right-2 -translate-y-1/2 flex flex-col z-10">
+      <div className="absolute top-[220px] lg:top-1/2 md:right-4 right-2 -translate-y-1/2 flex flex-col z-10">
         {HERO_IMAGES.map((_, index) => {
           const isActive = index === currentIndex;
           return (
-            <div key={index} className="flex items-cente gap-2">
+            <div key={index} className="flex items-center gap-2">
               {/* Index Number */}
               <span
                 className={cn(
