@@ -109,7 +109,7 @@ export default function HeroSection() {
               />
             }
             iconPosition="right"
-            className="group hover:bg-[#EE3524] hover:text-white px-6 rounded-[35px] h-[42px] text-[16px] text-[#515151] border border-[#515151] font-light"
+            className="group hover:bg-[#EE3524] hover:text-white px-6 rounded-[35px] h-[42px] text-[16px] text-[#FFFFFF] border border-[#FFFFFF] font-light"
           />
         </motion.div>
       </div>
