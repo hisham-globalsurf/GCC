@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { ReusableButton } from "@/components/Common/Button";
+import { motion } from "framer-motion";
 
 const newsData = [
   {
@@ -58,7 +59,7 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="container bg-[#F5F3F0] lg:py-10 py-6">
+    <section className="container bg-[#F5F3F0] lg:pt-[50px] pt-6">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-[30px] md:text-[68px] font-normal text-black">
           News
@@ -78,7 +79,7 @@ export default function NewsSection() {
         />
       </div>
 
-      <div className="w-full border-b border-[#C2C2C2] mb-[52px] mt-[40px]"></div>
+      <div className="w-full border-b border-[#C2C2C2] lg:mb-[52px] mb-[30px]"></div>
 
       <Swiper
         modules={[Pagination, Autoplay, Navigation]}
@@ -97,9 +98,15 @@ export default function NewsSection() {
       >
         {newsData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex flex-col md:flex-row gap-[69px]">
+            <div className="flex flex-col lg:flex-row lg:gap-[69px] gap-[40px]">
               {/* Left: Image */}
-              <div className="w-full h-auto md:w-[745px] md:h-[431px]">
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="w-full h-auto md:w-[745px] md:h-[431px]"
+              >
                 <Image
                   src={item.image}
                   alt="News image"
@@ -107,11 +114,17 @@ export default function NewsSection() {
                   height={431}
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Right: Content */}
-              <div className="w-full md:basis-[50%] flex flex-col justify-evenly md:py-10">
-                <div className="flex justify-between items-center mb-4">
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                viewport={{ once: true }}
+                className="w-full md:basis-[50%] flex flex-col justify-evenly lg:py-10"
+              >
+                <div className="flex justify-between items-center mb-8 lg:mb-4">
                   <span className="bg-[#7AC142] text-[#515151] text-[16px] font-light uppercase px-[14px] py-[3px]">
                     {item.category.toUpperCase()}
                   </span>
@@ -120,11 +133,11 @@ export default function NewsSection() {
                   </span>
                 </div>
 
-                <h3 className="text-[24px] md:text-[32px] text-[#515151] font-normal mb-3 leading-[29px] md:leading-[45px]">
+                <h3 className="text-[23px] md:text-[32px] text-[#515151] font-normal mb-3 leading-[29px] md:leading-[45px]">
                   {item.title}
                 </h3>
 
-                <p className="text-[19px] font-light text-[#515151] mb-[50px]">
+                <p className="text-[19px] font-light text-[#515151] lg:mb-[50px] mb-[30px]">
                   {item.description}
                 </p>
 
@@ -143,13 +156,13 @@ export default function NewsSection() {
                     className="hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </SwiperSlide>
         ))}
 
         {/* Pagination */}
-        <div className="custom-pagination mt-[42px] lg:mb-10 mb-6 flex justify-center gap-[10px]"></div>
+        <div className="custom-pagination mt-[42px] lg:mb-[70px] mb-8 flex justify-center gap-[10px]"></div>
       </Swiper>
 
       <style jsx global>{`

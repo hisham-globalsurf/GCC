@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
+import { motion } from "framer-motion";
 
 interface SectorData {
   id: number;
@@ -78,22 +79,47 @@ export default function DiverseSectorsSlider() {
   return (
     <div className="bg-black text-white py-12 px-3 md:px-0 sm:pl-0 md:pl-24">
       <div>
-        <h2 className="text-[40px] md:text-[68px] font-normal mb-10 text-left">
+        <motion.h2
+          className="text-[40px] md:text-[68px] font-normal mb-10 text-left"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           Our Diverse Sectors
-        </h2>
+        </motion.h2>
         <div className="relative">
           <Swiper
             modules={[Navigation]}
-            slidesPerView={"auto"}
             navigation={{
               nextEl: ".swiper-button-next-custom",
               prevEl: ".swiper-button-prev-custom",
             }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 1.5,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3.4,
+              },
+            }}
             className="sectors-swiper"
           >
             {sectorsData.map((sector) => (
-              <SwiperSlide key={sector.id} className="!w-[510px] !h-[550px]">
-                <div className="group cursor-pointer h-full">
+              <SwiperSlide key={sector.id} className="!h-[550px]">
+                <motion.div
+                  className="group cursor-pointer h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
                   <div className="border-t-1 border-r-1 border-[#C2C2C2] group-hover:border-t-[#7AC142] group-hover:border-t-6 transition-all duration-300 p-2 h-full flex flex-col items-center">
                     <div className="px-3 py-6">
                       {/* Icon */}
@@ -108,7 +134,7 @@ export default function DiverseSectorsSlider() {
                           />
                         </div>
                         <div className="hidden group-hover:block">
-                          <button className="p-2 bg-white rounded-[25px] px-4">
+                          <button className="p-2 bg-white rounded-[25px] px-4 hover:bg-[#EE3524] hover:text-white">
                             <Image
                               src="/home/about/right_top_arrow.png"
                               alt="Download"
@@ -123,12 +149,12 @@ export default function DiverseSectorsSlider() {
                         {sector.title}
                       </h3>
                       {/* Description */}
-                      <p className="text-[19px] font-light mb-6 flex-grow h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:h-18 group-hover:opacity-100">
+                      <p className="text-[19px] font-light mb-6 flex-grow h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:h-20 group-hover:opacity-100">
                         {sector.description}
                       </p>
                     </div>
                     {/* Image */}
-                    <div className="relative w-[487px] h-[400px] hover:h-[320px] transition-all duration-300 overflow-hidden">
+                    <div className="relative w-full h-full hover:h-[320px] transition-all duration-300 overflow-hidden">
                       <Image
                         src={sector.image}
                         alt={sector.title}
@@ -137,12 +163,12 @@ export default function DiverseSectorsSlider() {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
           {/* Navigation Buttons */}
-          <div className="absolute bottom-[50px] -translate-y-1/2 right-0 md:right-[232px] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
+          <div className="absolute bottom-[50px] -translate-y-1/2 left-[calc(100%/3*2.59)] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
             {/* Left Button */}
             <div className="swiper-button-prev-custom w-1/2 h-full bg-black hover:bg-white/30 flex items-center justify-center transition-colors duration-200 cursor-pointer">
               <ChevronLeft className="text-[#7AC142]" />

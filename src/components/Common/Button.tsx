@@ -5,11 +5,12 @@ import clsx from "clsx";
 import { MdFileDownload } from "react-icons/md";
 
 interface ReusableButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
-  icon?: React.ReactNode; 
+  label: React.ReactNode;
+  icon?: React.ReactNode;
   iconPosition?: "left" | "right";
   className?: string;
 }
+
 
 export const ReusableButton: React.FC<ReusableButtonProps> = ({
   label,
