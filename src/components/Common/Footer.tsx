@@ -182,28 +182,18 @@ export default function GCCFooter() {
             className="flex flex-col md:flex-row justify-between items-center gap-6 w-full"
           >
             <div className="flex lg:space-x-[35px] lg:text-[16px] text-[14px] font-light uppercase w-full lg:w-1/2 justify-between px-4 lg:px-0 lg:justify-start">
-              <a
-                href="#"
-                className="flex items-center gap-1 group text-[#787878]"
-              >
-                LINKEDIN
-                <MdArrowOutward className="text-[#7AC142] group-hover:underline text-[22px]" />
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-1 group text-[#787878]"
-              >
-                FACEBOOK
-                <MdArrowOutward className="text-[#7AC142] group-hover:underline text-[22px]" />
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-1 group text-[#787878]"
-              >
-                YOUTUBE
-                <MdArrowOutward className="text-[#7AC142] group-hover:underline text-[22px]" />
-              </a>
+              {["LINKEDIN", "FACEBOOK", "YOUTUBE"].map((label) => (
+                <a
+                  key={label}
+                  href="#"
+                  className="flex items-center gap-1 group text-[#787878] transition-all duration-300 hover:scale-110"
+                >
+                  {label}
+                  <MdArrowOutward className="text-[#7AC142] text-[22px] group-hover:underline" />
+                </a>
+              ))}
             </div>
+
             <div className="w-full md:w-1/2 flex justify-center lg:justify-start lg:ml-60">
               <ReusableButton
                 label="Download Profile"
@@ -229,12 +219,8 @@ export default function GCCFooter() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
           {/* Links */}
           <div className="flex flex-row w-full lg:w-fit justify-center gap-24 text-[16px]">
-            <a href="#" className="hover:underline">
-              Terms & Conditions
-            </a>
-            <a href="#" className="hover:underline">
-              Feedback
-            </a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Feedback</a>
           </div>
 
           {/* Copyright */}
