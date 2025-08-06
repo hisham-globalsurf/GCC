@@ -61,10 +61,11 @@ export default function AboutCompany() {
                   alt="Download"
                   width={28}
                   height={28}
+                  className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
                 />
               }
               iconPosition="right"
-              className="hover:bg-[#EE3524] hover:text-white px-6 rounded-[35px] h-[42px] text-[16px] text-[#515151] border border-[#515151] font-light"
+              className="group hover:bg-[#EE3524] hover:text-white px-6 rounded-[35px] h-[42px] text-[16px] text-[#515151] border border-[#515151] font-light"
             />
           </div>
         </motion.div>

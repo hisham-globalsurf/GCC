@@ -7,6 +7,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import { ReusableButton } from "@/components/Common/Button";
 
 interface SectorData {
   id: number;
@@ -120,9 +121,9 @@ export default function DiverseSectorsSlider() {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <div className="border-t-1 border-r-1 border-[#C2C2C2] group-hover:border-t-[#7AC142] group-hover:border-t-6 transition-all duration-300 p-2 h-full flex flex-col items-center">
+                  <div className="group border-t-1 border-r-1 border-[#C2C2C2] transition-all duration-300 p-2 h-full flex flex-col items-center group-hover:border-t-[#7AC142] group-hover:border-t-6">
                     <div className="px-3 py-6">
-                      {/* Icon */}
+                      {/* Icon Row */}
                       <div className="mb-[16px] flex justify-between items-center">
                         <div className="w-12 h-12 flex items-center justify-center">
                           <Image
@@ -133,26 +134,34 @@ export default function DiverseSectorsSlider() {
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <div className="hidden group-hover:block">
-                          <button className="p-2 bg-white rounded-[25px] px-4 hover:bg-[#EE3524] hover:text-white">
-                            <Image
-                              src="/home/about/right_top_arrow.png"
-                              alt="Download"
-                              width={24}
-                              height={24}
-                            />
-                          </button>
+
+                        <div className="group/button hidden group-hover:block">
+                          <ReusableButton
+                            icon={
+                              <Image
+                                src="/home/about/right_top_arrow.png"
+                                alt="Download"
+                                width={24}
+                                height={24}
+                                className="transition duration-300 group-hover/button:filter group-hover/button:brightness-0 group-hover/button:invert"
+                              />
+                            }
+                            className="bg-[#F5F3F0] group-hover/button:bg-[#EE3524] w-[69px] group-hover/button:text-white rounded-[35px] text-[16px] text-[#515151] border border-[#515151]"
+                          />
                         </div>
                       </div>
+
                       {/* Title */}
                       <h3 className="text-[32px] font-normal mb-[20px]">
                         {sector.title}
                       </h3>
+
                       {/* Description */}
                       <p className="text-[19px] font-light mb-6 flex-grow h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:h-20 group-hover:opacity-100">
                         {sector.description}
                       </p>
                     </div>
+
                     {/* Image */}
                     <div className="relative w-full h-full hover:h-[320px] transition-all duration-300 overflow-hidden">
                       <Image

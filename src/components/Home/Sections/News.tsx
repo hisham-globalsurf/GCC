@@ -70,12 +70,13 @@ export default function NewsSection() {
             <Image
               src="/home/about/right_top_arrow.png"
               alt="view all"
-              width={28}
+              width={28}  
               height={28}
+              className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
             />
           }
           iconPosition="right"
-          className="hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
+          className="group hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
         />
       </div>
 
@@ -149,11 +150,12 @@ export default function NewsSection() {
                         src="/home/about/right_top_arrow.png"
                         alt="view all"
                         width={28}
-                        height={28}
+                        height={28} 
+                        className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
                       />
                     }
                     iconPosition="right"
-                    className="hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
+                    className="group hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
                   />
                 </div>
               </motion.div>
