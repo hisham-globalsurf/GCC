@@ -31,7 +31,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative h-[780px] max-w-[1920px] overflow-hidden">
+    <div className="relative lg:h-[780px] h-[720px] max-w-[1920px] overflow-hidden">
       <AnimatePresence>
         {HERO_IMAGES.map((src, index) => {
           const isActive = index === currentIndex;
