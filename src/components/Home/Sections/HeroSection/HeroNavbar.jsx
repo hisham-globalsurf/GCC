@@ -20,13 +20,13 @@ export default function HeroNavbar() {
   ];
 
   return (
-      <div className="absolute top-0 left-0 w-full z-20 h-[79px] md:h-[99px] lg:overflow-hidden">
+      <div className="absolute top-0 left-0 w-full z-20 h-[79px] lg:h-[99px] lg:overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between h-full border-b border-[#DBDBDB] px-6 lg:px-0 lg:pl-20">
           {/* Logo */}
           <div className="w-[160px] h-[45px] lg:w-[233px] lg:h-[66px]">
             <Image
-              src="/home/hero/navlogo.svg"
+              src="/home/hero/navLogo.svg"
               alt="Logo"
               width={233}
               height={66}
