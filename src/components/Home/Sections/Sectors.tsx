@@ -168,7 +168,7 @@ export default function DiverseSectorsSlider() {
             ))}
           </Swiper>
           {/* Navigation Buttons */}
-          <div className="absolute bottom-[50px] -translate-y-1/2 left-[calc(100%/3*2.59)] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
+          <div className="absolute bottom-[50px] -translate-y-1/2 left-[calc(100%/3*2.588)] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
             {/* Left Button */}
             <div className="swiper-button-prev-custom w-1/2 h-full bg-black hover:bg-white/30 flex items-center justify-center transition-colors duration-200 cursor-pointer">
               <ChevronLeft className="text-[#7AC142]" />
