@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import { ReusableButton } from "@/components/Common/Button";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
+import type { Swiper as SwiperClass } from 'swiper';
+
 
 const projects = [
   {
@@ -43,7 +45,7 @@ const projects = [
 export default function FeaturedProjects() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     setActiveIndex(swiper.realIndex);
   };
 

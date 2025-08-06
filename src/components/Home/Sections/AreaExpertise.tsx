@@ -135,7 +135,6 @@ export default function AreaOfExpertise() {
                 swiperRef.current.slideToLoop(index, 0);
 
                 setTimeout(() => {
-                  const nextIndex = (index + 1) % expertiseData.length;
                   swiperRef.current?.slideNext();
                   swiperRef.current?.autoplay.start();
                 }, 3000);
