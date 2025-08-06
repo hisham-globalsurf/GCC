@@ -6,7 +6,7 @@ import { FaYoutube, FaFacebookF, FaBars, FaXmark } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function HeroNavbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [

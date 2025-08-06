@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { ReusableButton } from "@/components/Common/Button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import HeroNavbar from "./HeroNavbar";
+import HeroNavbar from "../../Common/Navbar";
 import { motion, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 
@@ -65,7 +65,7 @@ export default function HeroSection() {
       </AnimatePresence>
 
       {/* NAVBAR */}
-      <HeroNavbar />
+      {/* <HeroNavbar /> */}
 
       {/* HERO TEXT CONTENT */}
       <div className="relative z-10 flex flex-col justify-center items-start h-full w-full container text-white">

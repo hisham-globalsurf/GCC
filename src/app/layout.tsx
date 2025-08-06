@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
-// import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
-
-// const dmSans = DM_Sans({
-//   variable: "--font-dm-sans",
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: ["300", "400", "500", "600", "700", "800"]
-// });
-
+import Navbar from "@/components/Common/Navbar";
+import Footer from "@/components/Common/Footer";
 
 export const metadata: Metadata = {
   title: "GCC",
@@ -23,10 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased`}
-      >
+      <body className={`antialiased`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
