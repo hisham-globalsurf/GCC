@@ -97,7 +97,7 @@ export default function AreaOfExpertise() {
   }, []);
 
   return (
-    <section className="bg-white w-full pt-12 px-3 sm:px-10 md:px-0 sm:pl-0 md:pl-20">
+    <section className="bg-white w-full pt-12 px-3 sm:px-10 md:px-0 sm:pl-0 md:pl-20 overflow-hidden">
       <h2 className="text-black text-[30px] md:text-[68px] font-normal lg:mb-[43px] mb-[25px]">
         Area of Expertise
       </h2>
@@ -118,7 +118,6 @@ export default function AreaOfExpertise() {
             },
             1024: {
               slidesPerView: "auto",
-              spaceBetween: 0,
             },
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -190,10 +189,10 @@ export default function AreaOfExpertise() {
         <AnimatePresence mode="wait">
           <motion.div
             key={`image-${activeIndex}`}
-            initial={{ x: -35, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -35, opacity: 0 }}
-            transition={{ duration: 0.4 }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -30, opacity: 0 }}
+            transition={{ duration: 0.5 }}
             className="w-full lg:w-[60%] h-auto lg:h-[500px] md:w-1/2 "
           >
             <Image
@@ -209,17 +208,17 @@ export default function AreaOfExpertise() {
         <AnimatePresence mode="wait">
           <motion.div
             key={`text-${activeIndex}`}
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 50, opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="w-full lg:w-[40%] pl-0 md:pl-[20px] border-l-2 h-full flex items-center"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 30, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full lg:w-[40%] pl-0 md:pl-[20px] lg:border-l-2 h-full flex items-center"
           >
             <div className="md:pl-8 flex flex-col justify-evenly pb-12 h-[65%]">
               <h3 className="text-[25px] md:text-[32px] font-normal text-[#515151]">
                 {expertiseData[activeIndex].heading}
               </h3>
-              <p className="text-[#515151] text-[19px] font-light mb-6">
+              <p className="text-[#515151] text-[19px] h-[200px] lg:h-auto font-light mb-6">
                 {expertiseData[activeIndex].description}
               </p>
 
