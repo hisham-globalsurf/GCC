@@ -31,6 +31,7 @@ export default function HeroNavbar() {
               width={233}
               height={66}
               className="w-full h-full object-contain"
+              loading="lazy"
             />
           </div>
           {/* Desktop Navigation */}

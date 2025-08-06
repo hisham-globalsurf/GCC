@@ -12,9 +12,9 @@ export default function GCCFooter() {
       <footer className="container text-white py-12 relative bg-black">
         <div className="absolute inset-0">
           <Image
-            src="/home/footer/footer.png"
+            src="/home/footer/footer.jpg"
             alt="footer-bg"
-            className="w-full h-full object-cover opacity-75"
+            className="w-full h-full object-cover opacity-25"
             width={1920}
             height={824}
           />
