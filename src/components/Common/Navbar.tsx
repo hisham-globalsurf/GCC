@@ -5,25 +5,28 @@ import { useState } from "react";
 import { FaYoutube, FaFacebookF, FaBars, FaXmark } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    "About",
-    "Expertise",
-    "AI Technology",
-    "Projects",
-    "How We Work",
-    "News & Media",
-    "Careers",
-  ];
+const navLinks = [
+  { label: "About", href: "/companyOverview" },
+  { label: "Expertise", href: "/expertise" },
+  { label: "AI Technology", href: "#ai-technology" },
+  { label: "Projects", href: "#projects" },
+  { label: "How We Work", href: "#how-we-work" },
+  { label: "News & Media", href: "#news-media" },
+  { label: "Careers", href: "#careers" },
+];
+
 
   return (
       <div className="absolute top-0 left-0 w-full z-20 h-[79px] lg:h-[99px] lg:overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between h-full border-b border-[#DBDBDB] px-6 lg:px-0 lg:pl-20">
           {/* Logo */}
+          <Link href="/">
           <div className="w-[160px] h-[45px] lg:w-[233px] lg:h-[66px]">
             <Image
               src="/home/hero/navLogo.svg"
@@ -34,6 +37,7 @@ export default function Navbar() {
               loading="lazy"
             />
           </div>
+          </Link>
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10 h-full">
             <div className="flex flex-col items-end gap-5">
@@ -54,13 +58,13 @@ export default function Navbar() {
               {/* Nav Links */}
               <nav className="flex gap-[37px] text-white text-[16px] font-normal uppercase leading-[29px] group">
                 {navLinks.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href="#"
+                    href={item.href}
                     className="transition-opacity duration-400 group-hover:opacity-40 hover:opacity-100"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 ))}
               </nav>
             </div>

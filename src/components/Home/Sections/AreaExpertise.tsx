@@ -97,8 +97,8 @@ export default function AreaOfExpertise() {
   }, []);
 
   return (
-    <section className="bg-white w-full pt-12 px-3 sm:px-10 md:px-0 sm:pl-0 md:pl-20 overflow-hidden">
-      <h2 className="text-black text-[30px] md:text-[68px] font-normal lg:mb-[43px] mb-[25px]">
+    <section className="bg-white w-full pt-12 px-3 sm:px-10 lg:pl-20 overflow-hidden">
+      <h2 className="text-black text-[30px] lg:text-[68px] font-normal lg:mb-[43px] mb-[25px]">
         Area of Expertise
       </h2>
 
@@ -116,8 +116,11 @@ export default function AreaOfExpertise() {
             640: {
               slidesPerView: 2,
             },
+            768: {
+              slidesPerView: 3,
+            },
             1024: {
-              slidesPerView: "auto",
+              slidesPerView: 4.7,
             },
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -126,7 +129,8 @@ export default function AreaOfExpertise() {
           {expertiseData.map((item, index) => (
             <SwiperSlide
               key={item.id}
-              className="cursor-pointer pt-4 lg:!w-[305px] !w-[200px]"
+              // className="cursor-pointer pt-4 lg:!w-[305px] !w-[200px]"
+              className="cursor-pointer pt-4"
               onClick={() => {
                 if (!swiperRef.current) return;
 
@@ -134,13 +138,12 @@ export default function AreaOfExpertise() {
                 swiperRef.current.slideToLoop(index, 0);
 
                 setTimeout(() => {
-                  swiperRef.current?.slideNext();
                   swiperRef.current?.autoplay.start();
-                }, 3000);
+                }, 0);
               }}
             >
               <div>
-                <div className="flex flex-col text-[#515151] items-start transition-all duration-300 pr-6 md:pr-4 pb-8">
+                <div className="flex flex-col text-[#515151] items-start transition-all duration-300 lg:pr-4 pb-8">
                   <div
                     className={`w-[85px] h-[85px] flex items-center justify-center rounded-full border transition-all duration-300 ${
                       activeIndex === index
@@ -176,7 +179,7 @@ export default function AreaOfExpertise() {
                   )}
                 </div>
 
-                <p className="text-[16px] md:text-[20px] font-normal text-left mt-4 relative text-[#515151]">
+                <p className="text-[16px] lg:text-[20px] font-normal text-left mt-4 relative text-[#515151]">
                   {item.title}
                 </p>
               </div>
@@ -185,7 +188,7 @@ export default function AreaOfExpertise() {
         </Swiper>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start gap-[40px] -mt-3 lg:mt-10 pt-12 sm:pr-10 lg:pr-20 lg:h-[590px]">
+      <div className="flex flex-col lg:flex-row items-start gap-[40px] -mt-3 lg:mt-10 pt-12 lg:pr-20 lg:h-[590px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={`image-${activeIndex}`}
@@ -193,7 +196,7 @@ export default function AreaOfExpertise() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:w-[60%] h-auto lg:h-[500px] md:w-1/2 "
+            className="w-full lg:w-[60%] h-auto lg:h-[500px] "
           >
             <Image
               src={expertiseData[activeIndex].image}
@@ -212,10 +215,10 @@ export default function AreaOfExpertise() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 30, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full lg:w-[40%] pl-0 md:pl-[20px] lg:border-l-2 h-full flex items-center"
+            className="w-full lg:w-[40%] pl-0 lg:pl-[20px] lg:border-l-2 h-full flex items-center"
           >
-            <div className="md:pl-8 flex flex-col justify-evenly pb-12 h-[65%]">
-              <h3 className="text-[25px] md:text-[32px] font-normal text-[#515151]">
+            <div className="lg:pl-8 flex flex-col justify-evenly pb-12 h-[65%]">
+              <h3 className="text-[25px] lg:text-[32px] font-normal text-[#515151]">
                 {expertiseData[activeIndex].heading}
               </h3>
               <p className="text-[#515151] text-[19px] h-[200px] lg:h-auto font-light mb-6">

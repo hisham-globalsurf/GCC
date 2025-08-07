@@ -9,8 +9,7 @@ import "swiper/css/navigation";
 import { ReusableButton } from "@/components/Common/Button";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
-import type { Swiper as SwiperClass } from 'swiper';
-
+import type { Swiper as SwiperClass } from "swiper";
 
 const projects = [
   {
@@ -59,7 +58,7 @@ export default function FeaturedProjects() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="text-[30px] md:text-[68px] font-normal text-black">
+        <h2 className="text-[30px] lg:text-[68px] font-normal text-black">
           Featured Projects
         </h2>
         <div className="flex gap-5 flex-col md:flex-row items-end md:items-center">
@@ -77,12 +76,12 @@ export default function FeaturedProjects() {
                 src="/home/about/right_top_arrow.png"
                 alt="view all"
                 width={28}
-                height={28} 
+                height={28}
                 className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
               />
             }
             iconPosition="right"
-            className="group hover:bg-[#EE3524] hover:text-white lg:px-6 px-4 rounded-[35px] lg:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
+            className="group hover:bg-[#EE3524] hover:text-white md:px-6 px-4 rounded-[35px] md:h-[42px] h-[35px] text-[16px] text-[#515151] border border-[#515151] font-light"
             label={
               <>
                 <span className="block lg:hidden">Explore</span>
@@ -94,10 +93,10 @@ export default function FeaturedProjects() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row border-t border-[#DDD] px-4 lg:px-0 lg:pl-20">
+      <div className="flex flex-col lg:flex-row border-t border-[#DDD] px-3 sm:px-10 lg:px-0 lg:pl-20">
         {/* Left - Info */}
         <motion.div
-          className="w-full md:w-[30%] border-r border-[#DDD] lg:pr-16 flex flex-col justify-evenly"
+          className="w-full lg:w-[30%] border-r border-[#DDD] lg:pr-16 flex flex-col justify-evenly"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -141,7 +140,7 @@ export default function FeaturedProjects() {
                   alt="view all"
                   width={28}
                   height={28}
-                    className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
+                  className="transition duration-300 group-hover:filter group-hover:brightness-0 group-hover:invert"
                 />
               }
               iconPosition="right"
@@ -151,7 +150,7 @@ export default function FeaturedProjects() {
         </motion.div>
 
         {/* Right - Swiper */}
-        <div className="w-full md:w-[70%] lg:pl-8 pt-8">
+        <div className="w-full lg:w-[70%] lg:pl-8 pt-8">
           <Swiper
             modules={[Navigation]}
             navigation={{
@@ -161,9 +160,10 @@ export default function FeaturedProjects() {
             onSlideChange={handleSlideChange}
             slidesPerView={1}
             spaceBetween={30}
+            loop={true}
             breakpoints={{
               640: {
-                slidesPerView: 1.2,
+                slidesPerView: 1,
                 spaceBetween: 30,
               },
               1024: {

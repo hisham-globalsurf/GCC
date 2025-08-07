@@ -82,7 +82,7 @@ export default function DiverseSectorsSlider() {
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   return (
-    <div className="bg-black text-white py-12 px-3 md:px-0 sm:pl-0 md:pl-24">
+    <div className="bg-black text-white py-12 px-3 sm:px-10 md:px-0 lg:pl-20">
       <div>
         <motion.h2
           className="text-[40px] md:text-[68px] font-normal mb-10 text-left"
@@ -103,12 +103,6 @@ export default function DiverseSectorsSlider() {
             breakpoints={{
               0: {
                 slidesPerView: 1,
-              },
-              640: {
-                slidesPerView: 1.5,
-              },
-              768: {
-                slidesPerView: 2,
               },
               1024: {
                 slidesPerView: 3.4,

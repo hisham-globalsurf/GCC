@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function GCCFooter() {
   return (
     <>
-      <footer className="container text-white py-12 relative bg-black">
+      <footer className="container text-white py-8 lg:py-12 relative bg-black">
         <div className="absolute inset-0">
           <Image
             src="/home/footer/footer.jpg"

@@ -71,7 +71,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="overflow-hidden -mt-16 md:mt-8 w-[330px] md:w-full"
         >
-          <h1 className="text-[39px] md:text-[72px] font-normal leading-[55px] md:leading-[85px] tracking-[0.02em]">
+          <h1 className="text-[39px] lg:text-[72px] font-normal leading-[55px] lg:leading-[85px] tracking-[0.02em]">
             Pioneering Progress with <br /> Quality & Expertise
           </h1>
         </motion.div>
@@ -79,9 +79,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className="overflow-hidden mt-[22px] md:mt-[25px] max-w-5xl"
+          className="overflow-hidden mt-[22px] lg:mt-[25px] max-w-5xl"
         >
-          <p className="text-[20px] md:text-[23px] font-light md:leading-[35px]">
+          <p className="text-[20px] lg:text-[23px] font-light lg:leading-[35px]">
             Gulf Contractors Company (GCC) is a subsidiary of Abu Dhabi-based Al
             Sharafi Group and United Eastern (UE) Group, leading conglomerates
             with diverse interests across the MENA region.
@@ -111,7 +111,7 @@ export default function HeroSection() {
       </div>
 
       {/* STATS */}
-      <div className="absolute bottom-0 left-0 w-full lg:pr-52 lg:px-20 px-4">
+      <div className="absolute bottom-0 left-0 w-full lg:pr-52 lg:px-20 px-3 sm:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 text-white border-t-1">
           {/* Stat 1 */}
           <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
