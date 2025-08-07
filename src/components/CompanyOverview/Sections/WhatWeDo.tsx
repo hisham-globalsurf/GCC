@@ -59,7 +59,7 @@ export default function WhatWeDo() {
         {/* Left Section */}
         <div className="w-full lg:w-1/2 lg:p-[40px] p-3 md:px-10">
           <p className="text-[#515151] lg:mb-[35px] mb-[15px] font-light text-[19px]">
-            Complementing GCC's sturdy business background, vast local
+            Complementing GCC&apos;s sturdy business background, vast local
             construction knowledge and rich resources is the ability to
             undertake construction projects of any scale and form. Currently,
             our construction activities span the below services
@@ -107,7 +107,7 @@ export default function WhatWeDo() {
           </div>
 
           <p className="text-[#515151] lg:mt-[35px] mt-[15px] font-light text-[19px] mb-3 lg:mb-0">
-            Furthermore, we place priority on quality, transparency and
+            Furthermore, we&apos; place priority on quality, transparency and
             innovativeness in every project, thereby ensuring that the right
             solutions are applied to deliver enhanced returns for our clients.
             The wide array of services offered by us is ever expanding to
