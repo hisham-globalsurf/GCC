@@ -2,12 +2,13 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 import { ReusableButton } from "@/components/Common/Button";
+import { useState } from "react";
 
 interface SectorData {
   id: number;
@@ -77,6 +78,9 @@ const sectorsData: SectorData[] = [
 ];
 
 export default function DiverseSectorsSlider() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => setIsOpen((prev) => !prev);
   return (
     <div className="bg-black text-white py-12 px-3 md:px-0 sm:pl-0 md:pl-24">
       <div>
@@ -111,6 +115,7 @@ export default function DiverseSectorsSlider() {
               },
             }}
             className="sectors-swiper"
+            loop={true}
           >
             {sectorsData.map((sector) => (
               <SwiperSlide key={sector.id} className="!h-[550px]">
@@ -121,8 +126,8 @@ export default function DiverseSectorsSlider() {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <div className="group border-t-1 border-r-1 border-[#C2C2C2] transition-all duration-300 p-2 h-full flex flex-col items-center group-hover:border-t-[#7AC142] group-hover:border-t-6">
-                    <div className="px-3 py-6">
+                  <div className="group border-t-1 border-r-1 border-[#C2C2C2] transition-all duration-300 p-2 h-full flex flex-col items-center lg:group-hover:border-t-[#7AC142] lg:group-hover:border-t-6">
+                    <div className="px-1 py-6">
                       {/* Icon Row */}
                       <div className="mb-[16px] flex justify-between items-center">
                         <div className="w-12 h-12 flex items-center justify-center">
@@ -135,7 +140,23 @@ export default function DiverseSectorsSlider() {
                           />
                         </div>
 
-                        <div className="group/button hidden group-hover:block">
+                        {/* Button */}
+                        <div className="group/button lg:hidden block">
+                          <div
+                            className="lg:hidden block"
+                            onClick={handleToggle}
+                          >
+                            <ArrowUpRight
+                              size={24}
+                              className={`transition duration-300 ${
+                                isOpen ? "rotate-315" : "rotate-135"
+                              }`}
+                            />
+                          </div>
+                        </div>
+
+                        {/* button on lg for hover */}
+                        <div className="group/button hidden lg:group-hover:block">
                           <ReusableButton
                             icon={
                               <Image
@@ -157,7 +178,14 @@ export default function DiverseSectorsSlider() {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-[19px] font-light mb-6 flex-grow h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:h-20 group-hover:opacity-100">
+                      <p
+                        className={`
+    text-[19px] font-light mb-6 overflow-hidden transition-all duration-300
+    h-0 opacity-0
+    ${isOpen ? "h-20 opacity-100" : ""}
+    lg:h-0 lg:opacity-0 lg:group-hover:h-20 lg:group-hover:opacity-100
+  `}
+                      >
                         {sector.description}
                       </p>
                     </div>
@@ -177,7 +205,7 @@ export default function DiverseSectorsSlider() {
             ))}
           </Swiper>
           {/* Navigation Buttons */}
-          <div className="absolute bottom-[50px] -translate-y-1/2 left-[calc(100%/3*2.588)] z-10 w-14 h-14 bg-black rounded-full flex overflow-hidden shadow-lg">
+          <div className="absolute lg:bottom-[50px] lg:-translate-y-1/2 lg:left-[calc(100%/3*2.588)] -right-2 lg:right-0 z-10 lg:w-14 lg:h-14 w-12 h-12 bg-black rounded-full flex overflow-hidden shadow-lg">
             {/* Left Button */}
             <div className="swiper-button-prev-custom w-1/2 h-full bg-black hover:bg-white/30 flex items-center justify-center transition-colors duration-200 cursor-pointer">
               <ChevronLeft className="text-[#7AC142]" />

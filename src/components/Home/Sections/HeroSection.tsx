@@ -30,7 +30,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative lg:h-[780px] h-[735px] max-w-[1920px] overflow-hidden">
+    <div className="relative lg:h-[780px] h-[765px] max-w-[1920px] overflow-hidden">
       <AnimatePresence>
         {HERO_IMAGES.map((src, index) => {
           const isActive = index === currentIndex;
@@ -45,7 +45,7 @@ export default function HeroSection() {
             >
               <Image
                 src={src}
-                alt="Hero Background" 
+                alt="Hero Background"
                 fill
                 priority
                 className="object-cover w-full h-full"
@@ -62,9 +62,6 @@ export default function HeroSection() {
           );
         })}
       </AnimatePresence>
-
-      {/* NAVBAR */}
-      {/* <HeroNavbar /> */}
 
       {/* HERO TEXT CONTENT */}
       <div className="relative z-10 flex flex-col justify-center items-start h-full w-full container text-white">
@@ -114,7 +111,7 @@ export default function HeroSection() {
       </div>
 
       {/* STATS */}
-      <div className="absolute bottom-0 left-0 w-full containe lg:pr-52 lg:px-20 px-4">
+      <div className="absolute bottom-0 left-0 w-full lg:pr-52 lg:px-20 px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 text-white border-t-1">
           {/* Stat 1 */}
           <div className="flex flex-col border-l border-r border-[#C2C2C2] items-center lg:items-start lg:pl-[45px] text-left justify-center lg:pb-[25px] py-[8px]">
@@ -159,33 +156,42 @@ export default function HeroSection() {
       </div>
 
       {/* SCROLLING TIMER INDICATOR */}
-      <div className="absolute top-[220px] lg:top-1/2 md:right-4 right-2 -translate-y-1/2 flex flex-col z-10">
+      <div className="absolute bottom-1/2 lg:top-1/2 left-1/2 lg:left-auto lg:right-4 lg:-translate-y-[160px] -translate-x-[50%] translate-y-[220px] flex lg:flex-col flex-row z-10">
         {HERO_IMAGES.map((_, index) => {
           const isActive = index === currentIndex;
           return (
-            <div key={index} className="flex items-center gap-2">
+            <div
+              key={index}
+              className="flex lg:flex-row flex-col gap-1 lg:gap-2"
+            >
               {/* Index Number */}
               <span
                 className={cn(
-                  "w-6 text-[14px] font-light tabular-nums",
+                  "w-6 text-[14px] font-light tabular-nums text-center",
                   isActive ? "text-white" : "text-white/40"
                 )}
               >
                 0{index + 1}
               </span>
 
-              {/* Vertical Line */}
+              {/* Line */}
               <div
                 className={cn(
-                  "relative w-[2px] overflow-hidden bg-white/50 transition-all duration-500 border-0",
-                  isActive ? "h-16 w-[3px]" : "h-6"
+                  // Responsive height/width for horizontal vs vertical line
+                  "relative bg-white/50 overflow-hidden transition-all duration-500 border-0",
+                  isActive
+                    ? "lg:h-16 h-[3px] lg:w-[3px] w-16"
+                    : "lg:h-6 h-[2px] lg:w-[2px] w-6"
                 )}
               >
                 {/* Green bar only on active */}
                 <div
                   className={cn(
-                    "absolute left-0 top-0 w-[3px] bg-[#7AC142] transition-all duration-[5200ms]",
-                    isActive && barVisible ? "h-full" : "h-0"
+                    "absolute bg-[#7AC142] transition-all duration-[5200ms]",
+                    // Direction of green bar fill
+                    isActive && barVisible
+                      ? "lg:left-0 lg:top-0 lg:w-[3px] lg:h-full w-full h-[3px] left-0 top-0"
+                      : "lg:w-[3px] lg:h-0 w-0 h-[3px]"
                   )}
                 />
               </div>
