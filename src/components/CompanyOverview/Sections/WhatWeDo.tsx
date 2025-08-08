@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
+import { AnimatePresence, motion } from "framer-motion";
 
 const services = [
   {
@@ -41,12 +42,19 @@ export default function WhatWeDo() {
     <div className="w-full bg-[#F5F3F0] pt-[25px] lg:pt-[57px]">
       {/* Heading */}
       <div className="container mb-[30px] lg:mb-[57px]">
-        <h2 className="text-[30px] md:text-[68px] font-normal mb-[10px] text-black">
-          What We Do
-        </h2>
-        <p className="text-[#515151] lg:text-[32px] text-[17px] font-light">
-          Unlocking Potential Through Construction Excellence
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-[30px] md:text-[68px] font-normal mb-[10px] text-black">
+            What We Do
+          </h2>
+          <p className="text-[#515151] lg:text-[32px] text-[17px] font-light">
+            Unlocking Potential Through Construction Excellence
+          </p>
+        </motion.div>
       </div>
 
       {/* Divider Line */}
@@ -57,7 +65,13 @@ export default function WhatWeDo() {
       {/* Two-column layout */}
       <div className="lg:pl-10 flex lg:flex-row flex-col">
         {/* Left Section */}
-        <div className="w-full lg:w-1/2 lg:p-[40px] p-3 md:px-10">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }} // start slightly to the left
+          whileInView={{ opacity: 1, x: 0 }} // move into place
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="w-full lg:w-1/2 lg:p-[40px] p-3 md:px-10"
+        >
           <p className="text-[#515151] lg:mb-[35px] mb-[15px] font-light text-[19px]">
             Complementing GCC&apos;s sturdy business background, vast local
             construction knowledge and rich resources is the ability to
@@ -113,20 +127,32 @@ export default function WhatWeDo() {
             The wide array of services offered by us is ever expanding to
             incorporate emerging needs and newer technological advancements.
           </p>
-        </div>
+        </motion.div>
 
         <div className="left-1/2 top-0  w-[1px] bg-[#C2C2C2]" />
 
         {/* Right Section - Image for lg */}
-        <div className="w-full h-full lg:w-1/2 lg:p-[40px] hidden lg:block">
+        <div className="w-full h-full lg:w-1/2 lg:p-[40px] hidden lg:block overflow-hidden">
           <div className="lg:max-w-[840px] lg:h-[700px]">
-            <Image
-              src={services[activeIndex].image}
-              alt={services[activeIndex].label}
-              width={840}
-              height={700}
-              className="w-full h-full object-cover"
-            />
+            <AnimatePresence>
+              <motion.div
+                key={services[activeIndex].image}
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                exit={{ x: -30, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="w-full h-full"
+              >
+                <Image
+                  src={services[activeIndex].image}
+                  alt={services[activeIndex].label}
+                  width={840}
+                  height={700}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

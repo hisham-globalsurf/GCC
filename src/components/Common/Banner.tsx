@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface BannerProps {
   imageSrc: string;
@@ -29,9 +32,14 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
       />
       <div className="absolute inset-0 flex items-center justify-center lg:items-end">
         <div className="container text-center lg:w-full lg:justify-items-start lg:pb-[83px]">
-          <h1 className="text-white text-[35px] lg:text-[72px] font-normal">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="text-white text-[35px] lg:text-[72px] font-normal"
+          >
             {title}
-          </h1>
+          </motion.h1>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaYoutube, FaFacebookF, FaBars, FaXmark } from "react-icons/fa6";
+import { RiSearchLine } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -42,18 +43,25 @@ export default function Navbar() {
           <div className="flex flex-col items-end gap-5">
             {/* Social Icons */}
             <div className="flex gap-2">
-              {[FaFacebookF, FaLinkedinIn, FaYoutube].map((Icon, i) => (
-                <div
-                  key={i}
-                  className="group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300"
-                >
-                  <Icon
-                    size={14}
-                    className="text-[#515151] group-hover:text-black transition-colors duration-200"
-                  />
-                </div>
-              ))}
+              {[FaFacebookF, FaLinkedinIn, FaYoutube, RiSearchLine].map(
+                (Icon, i) => (
+                  <div
+                    key={i}
+                    className={`group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300 ${Icon === RiSearchLine ? "bg-transparent" : ""}`}
+                  >
+                    <Icon
+                      size={Icon === RiSearchLine ? 19 : 14}
+                      className={
+                        Icon === RiSearchLine
+                          ? "text-[#EE3524] group-hover:text-white transition-colors duration-200"
+                          : "text-[#515151] group-hover:text-black transition-colors duration-200"
+                      }
+                    />
+                  </div>
+                )
+              )}
             </div>
+
             {/* Nav Links */}
             <nav className="flex gap-[37px] text-white text-[16px] font-normal uppercase leading-[29px] group">
               {navLinks.map((item, index) => (
@@ -140,17 +148,19 @@ export default function Navbar() {
               {/* Bottom: Socials + Contact */}
               <div className="absolute bottom-6 left-0 w-full px-6 flex flex-col gap-6">
                 <div className="flex gap-3">
-                  {[FaFacebookF, FaLinkedinIn, FaYoutube].map((Icon, i) => (
-                    <div
-                      key={i}
-                      className="group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300"
-                    >
-                      <Icon
-                        size={14}
-                        className="text-[#515151] group-hover:text-black transition-colors duration-200"
-                      />
-                    </div>
-                  ))}
+                  {[FaFacebookF, FaLinkedinIn, FaYoutube, RiSearchLine].map(
+                    (Icon, i) => (
+                      <div
+                        key={i}
+                        className="group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300"
+                      >
+                        <Icon
+                          size={14}
+                          className="text-[#515151] group-hover:text-black transition-colors duration-200"
+                        />
+                      </div>
+                    )
+                  )}
                 </div>
                 <div className="bg-[#EE3524] rounded-[25px] text-center w-full">
                   <button className="text-white uppercase text-[14px] font-light py-[10px] px-[25px] w-full">
