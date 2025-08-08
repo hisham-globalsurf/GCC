@@ -173,7 +173,7 @@ export default function Timeline() {
           <Image
             src="/companyOverview/legacy/legacyBg.jpg"
             alt="legacy background"
-            fill
+          fill
             className="object-cover"
           />
           <div

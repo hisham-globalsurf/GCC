@@ -27,7 +27,13 @@ export default function Navbar() {
       <div className="flex items-center justify-between h-full border-b border-[#DBDBDB] px-6 lg:px-0 lg:pl-20">
         {/* Logo */}
         <Link href="/">
-          <div className="w-[160px] h-[45px] lg:w-[233px] lg:h-[66px]">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="w-[160px] h-[45px] lg:w-[233px] lg:h-[66px]"
+          >
             <Image
               src="/home/hero/navLogo.svg"
               alt="Logo"
@@ -36,18 +42,26 @@ export default function Navbar() {
               className="w-full h-full object-contain"
               loading="lazy"
             />
-          </div>
+          </motion.div>
         </Link>
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-10 h-full">
-          <div className="flex flex-col items-end gap-5">
+        <div className="navClass items-center gap-10 h-full">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col items-end gap-5"
+          >
             {/* Social Icons */}
             <div className="flex gap-2">
               {[FaFacebookF, FaLinkedinIn, FaYoutube, RiSearchLine].map(
                 (Icon, i) => (
                   <div
                     key={i}
-                    className={`group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300 ${Icon === RiSearchLine ? "bg-transparent" : ""}`}
+                    className={`group w-[30px] h-[30px] flex items-center justify-center rounded-full border border-[#C2C2C2] bg-[#F4F4F4] hover:bg-[#EE3524] hover:border-[#EE3524] transition-colors duration-300 ${
+                      Icon === RiSearchLine ? "bg-transparent" : ""
+                    }`}
                   >
                     <Icon
                       size={Icon === RiSearchLine ? 19 : 14}
@@ -74,16 +88,22 @@ export default function Navbar() {
                 </Link>
               ))}
             </nav>
-          </div>
+          </motion.div>
           {/* Contact Button */}
-          <div className="bg-[#EE3524] h-full flex w-[200px] py-[29px] justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="bg-[#EE3524] h-full flex w-[200px] py-[29px] justify-center items-center"
+          >
             <button className="text-white uppercase text-[16px] font-light border border-white rounded-[25px] py-[5px] px-[25px] hover:bg-white hover:text-[#EE3524] hover:border-[#EE3524] transition-all duration-300">
               CONTACT
             </button>
-          </div>
+          </motion.div>
         </div>
         {/* Mobile Hamburger */}
-        <div className="lg:hidden flex items-center gap-4">
+        <div className="mobileHamburger items-center gap-4">
           <button
             className="text-white"
             onClick={() => setIsOpen((prev) => !prev)}

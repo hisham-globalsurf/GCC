@@ -54,3 +54,22 @@ body {
 .animate-fill-bar {
   animation: fill-bar 3.5s linear forwards;
 }
+
+
+.navClass {
+  display: none;
+}
+
+.mobileHamburger {
+  display: flex; /* or block depending on your hamburger layout */
+}
+
+/* When screen is 1430px or wider */
+@media (min-width: 1430px) {
+  .navClass {
+    display: flex;
+  }
+  .mobileHamburger {
+    display: none;
+  }
+}

@@ -13,7 +13,12 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
   return (
     <div className="relative w-full lg:h-[550px] h-[400px]">
-      <div className="absolute inset-0">
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         <Image
           src={imageSrc}
           alt={alt}
@@ -22,7 +27,7 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
           priority
           sizes="100vw"
         />
-      </div>
+      </motion.div>
       <div
         className="absolute inset-0"
         style={{
