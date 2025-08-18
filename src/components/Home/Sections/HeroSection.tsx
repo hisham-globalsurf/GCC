@@ -64,7 +64,7 @@ export default function HeroSection() {
       </AnimatePresence>
 
       {/* HERO TEXT CONTENT */}
-      <div className="relative z-10 flex flex-col justify-center items-start h-full w-full container text-white">
+      <div className="relative z-10 flex flex-col justify-center h-full container text-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

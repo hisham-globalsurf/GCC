@@ -182,7 +182,7 @@ export default function ImpactResponsibility() {
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.5}}
               className="cursor-pointer pt-4 w-full"
               onClick={() => handleClick(index)}
             >
