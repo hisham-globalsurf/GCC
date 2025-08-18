@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
-import type { Swiper as SwiperType } from "swiper";
+import { Swiper as SwiperType } from "swiper/types";
 
 const expertiseData = [
   {
@@ -133,7 +133,7 @@ export default function ImpactResponsibility() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const handleClick = (index: number) => {
-    const swiper = swiperRef.current?.swiper;
+    const swiper = swiperRef.current;
     const slidesPerView = swiper?.params?.slidesPerView;
 
     if (!swiper || typeof slidesPerView !== "number") return;
@@ -160,7 +160,9 @@ export default function ImpactResponsibility() {
       </h2>
 
       <Swiper
-        ref={swiperRef}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         breakpoints={{
           0: { slidesPerView: 2 },
           640: { slidesPerView: 3 },
