@@ -55,7 +55,7 @@ const SustainPractices = () => {
             recovery programs. We employ cutting-edge green building techniques,
             from energy-efficient designs to smart renewable energy integration,
             ensuring optimal resource use throughout the construction process.
-            Every project incorporates lifecycle thinking – we design for
+            Every project incorporates lifecycle thinking - we design for
             durability, plan for future adaptability, and consider end-of-phase
             material recovery, creating structures that deliver long-term
             environmental and economic value. Our comprehensive sustainability

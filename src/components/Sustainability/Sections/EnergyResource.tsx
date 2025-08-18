@@ -58,10 +58,10 @@ const EnergyResource: FC = () => {
         </h2>
         <p className="lg:text-[19px] text-[16px] font-normal mb-[58px] text-[#515151]">
           At Gulf Contractors, we prioritize intelligent use of energy and
-          materials across all project phases. By integrating energy‑efficient
+          materials across all project phases. By integrating energy-efficient
           technologies, optimizing resource planning, and reducing waste, we
           ensure every development minimizes environmental impact while
-          maximizing long‑term value for clients and communities.
+          maximizing long-term value for clients and communities.
         </p>
       </motion.div>
 
