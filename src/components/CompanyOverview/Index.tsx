@@ -8,14 +8,14 @@ import Legacy from './Sections/Legacy'
 
 const Index = () => {
   return (
-    <div>
+    <>
         <BannerSection/>
           <WhoWeAre/>
           <WhatWeDo/>
           <VisionMissionValues/>
           <Legacy/>
           <WhyChooseUs/>
-    </div>  
+    </>  
   )
 }
 

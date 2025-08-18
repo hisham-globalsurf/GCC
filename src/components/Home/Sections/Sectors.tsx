@@ -82,10 +82,10 @@ export default function DiverseSectorsSlider() {
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   return (
-    <div className="bg-black text-white py-12 px-3 sm:px-10 md:px-0 lg:pl-20">
+    <div className="bg-black text-white py-12 px-3 sm:px-10 lg:pl-20">
       <div>
         <motion.h2
-          className="text-[40px] md:text-[68px] font-normal mb-10 text-left"
+          className="text-[40px] lg:text-[68px] font-normal mb-[27px] text-left"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
