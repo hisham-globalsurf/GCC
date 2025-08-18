@@ -84,7 +84,7 @@ export default function UnDevelopment() {
       <div>
         <motion.h2
           className="text-[40px] lg:text-[68px] font-normal mb-[27px] text-left"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
@@ -93,8 +93,8 @@ export default function UnDevelopment() {
         </motion.h2>
         <motion.p
           className="text-[19px] lg:text-[23px] font-light max-w-[80vw] mb-[47px]"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
@@ -125,7 +125,7 @@ export default function UnDevelopment() {
               <SwiperSlide key={unDevelopment.id} className="!h-[550px]">
                 <motion.div
                   className="group cursor-pointer h-full"
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   viewport={{ once: true }}

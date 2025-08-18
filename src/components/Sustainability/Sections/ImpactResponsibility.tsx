@@ -155,9 +155,16 @@ export default function ImpactResponsibility() {
 
   return (
     <section className="container bg-black lg:py-[57px] py-[25px] overflow-hidden">
-      <h2 className="text-white text-[30px] lg:text-[68px] font-normal lg:mb-[43px] mb-[25px]">
-        Social Impact & Responsibility
-      </h2>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-white text-[30px] lg:text-[68px] font-normal lg:mb-[43px] mb-[25px]">
+          Social Impact & Responsibility
+        </h2>
+      </motion.div>
 
       <Swiper
         onSwiper={(swiper) => {
@@ -171,11 +178,13 @@ export default function ImpactResponsibility() {
       >
         {expertiseData.map((item, index) => (
           <SwiperSlide key={item.id}>
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="cursor-pointer pt-4 w-full"
-              onClick={() => {
-                handleClick(index);
-              }}
+              onClick={() => handleClick(index)}
             >
               <div className="flex flex-col text-white items-start transition-all duration-300 pb-8">
                 <div className="w-[85px] h-[85px] flex items-center transition-all duration-300">
@@ -206,7 +215,7 @@ export default function ImpactResponsibility() {
               >
                 {item.title}
               </p>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
