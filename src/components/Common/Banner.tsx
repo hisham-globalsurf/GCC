@@ -29,19 +29,22 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
         />
       </motion.div>
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%)",
-        }}
+        className="absolute inset-0 gradient-bg"
+        // style={{
+        //   background:
+        //     // "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%)",
+        //     "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.85) 90%)",
+        // }}
       />
-      <div className="absolute inset-0 flex items-center justify-center lg:items-end">
-        <div className="container text-center lg:w-full lg:justify-items-start lg:pb-[83px]">
+      {/* <div className="absolute inset-0 flex items-center justify-center lg:items-end"> */}
+      <div className="absolute inset-0 flex justify-center items-end">
+        {/* <div className="container text-center lg:w-full lg:justify-items-start lg:pb-[83px]"> */}
+        <div className="container lg:w-full lg:justify-items-start lg:pb-[83px] pb-[40px]">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="text-white text-[35px] lg:text-[72px] font-normal"
+            className="text-white text-[27px] lg:text-[72px] font-normal"
           >
             {title}
           </motion.h1>

@@ -73,3 +73,16 @@ body {
     display: none;
   }
 }
+
+
+
+.gradient-bg {
+  @apply bg-gradient-to-b;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.85) 90%);
+}
+
+@media (min-width: 1024px) {
+  .gradient-bg {
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%);
+  }
+}
