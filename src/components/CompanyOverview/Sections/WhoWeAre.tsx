@@ -4,14 +4,14 @@ import Image from "next/image";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-const textVariant: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay, duration: 0.8, ease: "easeOut" },
-  }),
-};
+  const textVariant: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (delay: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay, duration: 0.8, ease: "easeOut" },
+    }),
+  };
 
 const WhoWeAre = () => {
   return (

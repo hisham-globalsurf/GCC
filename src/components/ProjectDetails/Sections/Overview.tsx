@@ -2,6 +2,16 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+// const textVariant: Variants = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: (delay: number) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: { delay, duration: 0.8, ease: "easeOut" },
+//   }),
+// };
 
 type TabKey = "Project Overview" | "Challenges" | "Solution";
 const tabs: TabKey[] = ["Project Overview", "Challenges", "Solution"];
@@ -33,7 +43,7 @@ export default function TabbedSection() {
   const [activeTab, setActiveTab] = useState<TabKey>("Project Overview");
 
   return (
-    <div className="container bg-[#F5F3F0] lg:py-[57px] py-[25px]">
+    <div className="container bg-[#F5F3F0] lg:py-[57px] py-[25px] overflow-hidden">
       {/* Tabs */}
       <div className="relative border-t border-b border-[#C2C2C2] flex lg:gap-[100px] gap-[20px]">
         {tabs.map((tab) => (
@@ -60,7 +70,15 @@ export default function TabbedSection() {
 
         <div>
           {content[activeTab].image && (
-            <div className="max-w-[516px] h-[381px]">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="max-w-[516px] h-[381px]"
+            >
               <Image
                 src={content[activeTab].image}
                 alt="PD"
@@ -68,7 +86,7 @@ export default function TabbedSection() {
                 height={381}
                 className="object-cover h-[381px] w-full"
               />
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdArrowForwardIos } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const slides = [
   {
@@ -47,7 +48,15 @@ export default function ProjectSpecifications() {
 
   return (
     <section className="container bg-white py-[25px] lg:py-[57px]">
-      <div className="relative overflow-hidden lg:h-[715px]">
+      <motion.div
+        key={currentSlide} 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
+        viewport={{ once: true }}
+        className="relative overflow-hidden lg:h-[715px]"
+      >
         {/* Background Image */}
         <Image
           src={slide.image}
@@ -59,38 +68,50 @@ export default function ProjectSpecifications() {
         {/* <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,#ffffff_0%,#000000_85%)]"></div> */}
 
         {/* Navigation Arrows */}
-        <div className="absolute lg:bottom-10 lg:left-10 bottom-3 right-3 flex gap-[16px] z-20">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          viewport={{ once: true }}
+          className="absolute lg:bottom-10 lg:left-10 bottom-3 right-3 flex lg:gap-[16px] gap-[10px]  z-20"
+        >
           {/* Prev Button */}
           <button
             onClick={handlePrev}
             disabled={currentSlide === 0}
-            className={`lg:w-[80px] lg:h-[80px] w-[50px] h-[50px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
+            className={`lg:w-[80px] lg:h-[80px] w-[40px] h-[40px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
       ${
         currentSlide === 0
           ? "bg-[#FFFFFFB8]/76 cursor-not-allowed"
           : "bg-black/90 hover:bg-black cursor-pointer"
       }`}
           >
-            <ChevronLeft className="text-[#7AC142]" />
+            <ChevronLeft className="text-[#7AC142] lg:size-[30px] size-[20px]" />
           </button>
 
           {/* Next Button */}
           <button
             onClick={handleNext}
             disabled={currentSlide === slides.length - 1}
-            className={`lg:w-[80px] lg:h-[80px] w-[50px] h-[50px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
+            className={`lg:w-[80px] lg:h-[80px] w-[40px] h-[40px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
       ${
         currentSlide === slides.length - 1
           ? "bg-[#FFFFFFB8]/76 cursor-not-allowed"
           : "bg-black/90 hover:bg-black cursor-pointer"
       }`}
           >
-            <MdArrowForwardIos className="text-[#7AC142] size-[30px]" />
+            <MdArrowForwardIos className="text-[#7AC142] lg:size-[30px] size-[20px]" />
           </button>
-        </div>
+        </motion.div>
 
         {/* Project Details Overlay */}
-        <div className="lg:absolute lg:bottom-[30px] lg:right-[30px] lg:max-w-[515px] w-full h-[445px] bg-[linear-gradient(180deg,#ffffff1F_12%,#0F0D0D63_39%)] text-white border border-[#FFFFFF24] backdrop-blur-[5px] lg:p-[30px] p-[20px] flex flex-col z-20">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          viewport={{ once: true }}
+          className="lg:absolute lg:bottom-[30px] lg:right-[30px] lg:max-w-[515px] w-full h-[445px] bg-[linear-gradient(180deg,#ffffff1F_12%,#0F0D0D63_39%)] text-white border border-[#FFFFFF24] backdrop-blur-[5px] lg:p-[30px] p-[20px] flex flex-col z-20"
+        >
           <h2 className="lg:text-[32px] text-[23px] font-normal">
             Project Specifications
           </h2>
@@ -185,8 +206,8 @@ export default function ProjectSpecifications() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

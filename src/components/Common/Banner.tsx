@@ -18,6 +18,7 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
         <Image
           src={imageSrc}
@@ -42,7 +43,8 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, alt, title }) => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="text-white text-[27px] lg:text-[72px] font-normal"
+            viewport={{ once: true }}
+            className="text-white text-[35px] lg:text-[72px] font-normal"
           >
             {title}
           </motion.h1>
