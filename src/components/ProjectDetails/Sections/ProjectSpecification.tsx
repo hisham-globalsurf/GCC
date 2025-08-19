@@ -64,7 +64,7 @@ export default function ProjectSpecifications() {
           <button
             onClick={handlePrev}
             disabled={currentSlide === 0}
-            className={`w-[80px] h-[80px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
+            className={`lg:w-[80px] lg:h-[80px] w-[50px] h-[50px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
       ${
         currentSlide === 0
           ? "bg-[#FFFFFFB8]/76 cursor-not-allowed"
@@ -78,7 +78,7 @@ export default function ProjectSpecifications() {
           <button
             onClick={handleNext}
             disabled={currentSlide === slides.length - 1}
-            className={`w-[80px] h-[80px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
+            className={`lg:w-[80px] lg:h-[80px] w-[50px] h-[50px] rounded-full backdrop-blur-[4px] flex items-center justify-center transition
       ${
         currentSlide === slides.length - 1
           ? "bg-[#FFFFFFB8]/76 cursor-not-allowed"
